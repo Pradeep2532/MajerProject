@@ -11,7 +11,7 @@ const upload = multer({storage})
 router
 .route("/")
 .get(wrapAysnc(listingController.index))
-.post(isLoggedIn,upload.single('listing[image]'),validateListing,wrapAysnc(listingController.create),);
+.post(isLoggedIn,upload.single('listing[image]'),validateListing,wrapAysnc(listingController.create));
 
 
 

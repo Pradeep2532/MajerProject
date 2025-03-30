@@ -42,9 +42,6 @@ router.route("/login")
     res.redirect(redirectUrl);
 })
 
-router
-
-router
 
 router.get("/logout", (req, res, next) => {
     req.logout((err) => {

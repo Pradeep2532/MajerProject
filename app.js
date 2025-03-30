@@ -1,4 +1,4 @@
-if(process.env.NODE_ENV != "productin"){
+if(process.env.NODE_ENV != "production"){
     require('dotenv').config();
 }
 
@@ -41,6 +41,7 @@ main().then(() => {
     })
 
 async function main() {
+    console.log(dburl);
     await mongoose.connect(dburl);
 }
 
@@ -94,7 +95,7 @@ app.use((req,res,next)=>{
 //     res.send(registeredUser);
 // })
 
-app.use("/", (req,res)=>{
+app.get("/",(req,res)=>{
     res.redirect("/listing");
 })
 app.use("/listing", listing)
@@ -108,7 +109,7 @@ app.all("*", (req, res, next) => {
 
 app.use((err, req, res, next) => {
 
-    let { statusCode=500 , message="somthig went wrong" } = err;
+    let { statusCode=500 , message="somethig went wrong" } = err;
     res.status(statusCode).render("listings/error.ejs", { message });
 });
 
