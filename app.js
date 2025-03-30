@@ -94,6 +94,9 @@ app.use((req,res,next)=>{
 //     res.send(registeredUser);
 // })
 
+app.use("/", (req,res)=>{
+    res.redirect("/listing");
+})
 app.use("/listing", listing)
 app.use("/listing/:id/reviews", reviews);
 app.use("/", user);
