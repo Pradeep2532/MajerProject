@@ -92,7 +92,7 @@ body{
 
 /* Show Page  */
 .show-img{
-    height: 50vh;
+    height: 50vh !important;
     object-fit: cover;
 
 }
@@ -105,4 +105,5 @@ body{
 .show-card{
     padding-left: 0;
     padding-right: 0;
+
 }
